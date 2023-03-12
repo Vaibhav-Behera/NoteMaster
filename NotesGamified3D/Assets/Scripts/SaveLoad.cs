@@ -29,6 +29,8 @@ public class SaveLoad : MonoBehaviour
     public Text notesSeenText;
     public int flashnotesSeen = 0;
     public Text Flashnoteseentext;
+    public int savedNotes = 0;
+    public Text savedNotestext;
 
     public int correctans = 0;
     public Text correctanstext;
@@ -53,6 +55,8 @@ void Start()
     }
     public void SaveNote()
     {
+        savedNotes++;
+        savedNotestext.text = savedNotes.ToString();
         theText = ourNote.GetComponent<Text>().text;
         theText2 = ourNote2.GetComponent<Text>().text;
         theText3 = ourNote3.GetComponent<Text>().text;
@@ -149,7 +153,7 @@ public void FlashNextNote()
 }
 
 
-
+//This method can be used to delete a particular note
 // public void DeleteNoteByIndex(int index)
 // {
 //     if (index < contents.Length)
